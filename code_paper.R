@@ -7,6 +7,7 @@
 
 # Code written by G. Strona
 
+
 ### libraries ####
 library(randomForest)
 library(mgcv)
@@ -21,12 +22,12 @@ set.seed(123456)
 ### Clean data sets ####
 
 # Species richness per site
-data_div <- read.csv("data4paper/data_div.csv", header = TRUE)
+data_div <- read.csv("data_div.csv", header = TRUE)
 head(data_div)
 nrow(data_div)
 
 # relevé
-releve <- read.csv("data4paper/releve_clean.csv", header = TRUE)
+releve <- read.csv("releve_clean.csv", header = TRUE)
 View(releve)
 
 
@@ -35,8 +36,8 @@ View(releve)
 r2_e <- round(cor.test(data_div$releve_diversity, data_div$experts_diversity_20)[[4]]**2, 2)
 r2_e
 
-pdf('data4paper/figures/fig2_old.pdf', width = 8, height = 8)
-#png('data4paper/figures/fig2_old.png', width = 16, height = 8, units = "cm", res = 300, pointsize = 10)
+pdf('fig2_old.pdf', width = 8, height = 8)
+#png('fig2_old.png', width = 16, height = 8, units = "cm", res = 300, pointsize = 10)
 par(mfrow = c(1, 1))
 plot(data_div$experts_diversity_20, data_div$releve_diversity, 
      #main = bquote(paste('(a)' ~ {R^2} ~ '=' ~ .(r2_e))), 
@@ -222,8 +223,8 @@ sd(best_fitness)
 
 best_set <- pop_best[which(best_fitness == max(best_fitness))[1], ]
 
-pdf('data4paper/figures/fig1.pdf', width = 9, height = 3)
-#png('data4paper/figures/fig1.png', width = 18, height = 6, units = "cm", res = 300, pointsize = 10)
+pdf('fig1.pdf', width = 9, height = 3)
+#png('fig1.png', width = 18, height = 6, units = "cm", res = 300, pointsize = 10)
 par(mfrow = c(1, 3), font.main = 1)
 
 r2 <- round(cor.test(rel_div, colSums(rel_mat[unique(best_set), ]), na.rm = TRUE)[[4]]**2, 2)
@@ -259,8 +260,8 @@ summary(best_fitness)
 sd(best_fitness)
 
 
-pdf('data4paper/figures/fig2.pdf', width = 6, height = 3)
-#png('data4paper/figures/fig2.png', width = 12, height = 6, units = "cm", res = 300, pointsize = 6)
+pdf('fig2.pdf', width = 6, height = 3)
+#png('fig2.png', width = 12, height = 6, units = "cm", res = 300, pointsize = 6)
 par(mfrow = c(1, 2), font.main = 1)
 
 r2 <- round(cor.test(rel_div, colSums(rel_mat[unique(best_set_12), ]), na.rm = TRUE)[[4]]**2, 2)
@@ -394,8 +395,8 @@ for (rep in 1:100){
 
 
 
-pdf('data4paper/figures/fig3.pdf', width = 9, height = 3)
-#png('data4paper/figures/fig3.png', width = 17, height = 6, units = "cm", res = 300, pointsize = 10)
+pdf('fig3.pdf', width = 9, height = 3)
+#png('fig3.png', width = 17, height = 6, units = "cm", res = 300, pointsize = 10)
 par(mfrow = c(1, 3), font.main = 1) 
 par(oma = c(0, 3, 0, 0))
 #par(mai = c(1, 1.0, 0.5, 0.2))
