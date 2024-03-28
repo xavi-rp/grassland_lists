@@ -1,8 +1,9 @@
 
 ###############################################################
 #######            Code accompanying the paper          #######      
-#######     "Estimating European grassland diversity    #######
-#######      from a minimal set of indicator taxa"      #######      
+#######     "A machine learning approach to identify    #######
+#######  effective parsimonious sets of indicator taxa  #######
+#######       for grassland diversity monitoring"       #######      
 ###############################################################
 
 # Code written by G. Strona
